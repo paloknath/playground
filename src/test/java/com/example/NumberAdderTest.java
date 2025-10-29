@@ -20,12 +20,12 @@ public class NumberAdderTest {
     @Test
     void testAddPositiveAndNegativeNumbers() {
         NumberAdder adder = new NumberAdder();
-        assertEquals(1, adder.add(3, -2));
+        assertEquals(1, adder.add(-2, 3));
     }
 
     @Test
     void testAddZero() {
         NumberAdder adder = new NumberAdder();
-        assertEquals(5, adder.add(5, 0));
+        assertEquals(2, adder.add(2, 0));
     }
 }
