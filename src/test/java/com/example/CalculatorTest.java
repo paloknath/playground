@@ -6,32 +6,52 @@ import static org.junit.jupiter.api.Assertions.*;
 public class CalculatorTest {
 
     @Test
-    void testAdd() {
-        Calculator calc = new Calculator();
-        assertEquals(15, calc.add(10, 5));
+    void addTest() {
+        Calculator calculator = new Calculator();
+        assertEquals(5, calculator.add(2, 3));
     }
 
     @Test
-    void testSubtract() {
-        Calculator calc = new Calculator();
-        assertEquals(5, calc.subtract(10, 5));
+    void subtractTest() {
+        Calculator calculator = new Calculator();
+        assertEquals(1, calculator.subtract(3, 2));
     }
 
     @Test
-    void testMultiply() {
-        Calculator calc = new Calculator();
-        assertEquals(50, calc.multiply(10, 5));
+    void multiplyTest() {
+        Calculator calculator = new Calculator();
+        assertEquals(6, calculator.multiply(2, 3));
     }
 
     @Test
-    void testDivide() {
-        Calculator calc = new Calculator();
-        assertEquals(2, calc.divide(10, 5));
+    void divideTest() {
+        Calculator calculator = new Calculator();
+        assertEquals(2.0, calculator.divide(6, 3));
     }
 
     @Test
-    void testDivideByZero() {
-        Calculator calc = new Calculator();
-        assertThrows(ArithmeticException.class, () -> calc.divide(10, 0));
+    void divideByZeroTest() {
+        Calculator calculator = new Calculator();
+        assertThrows(IllegalArgumentException.class, () -> calculator.divide(5, 0));
+    }
+
+    @Test
+    void divideNegativeNumbersTest() {
+        Calculator calculator = new Calculator();
+        assertEquals(-2.0, calculator.divide(6, -3));
+        assertEquals(2.0, calculator.divide(-6, -3));
+        assertEquals(-2.0, calculator.divide(-6, 3));
+    }
+
+    @Test
+    void divideWithDecimalResultTest() {
+        Calculator calculator = new Calculator();
+        assertEquals(2.5, calculator.divide(5, 2));
+    }
+
+    @Test
+    void largeNumberDivisionTest() {
+        Calculator calculator = new Calculator();
+        assertEquals(1000000.0, calculator.divide(10000000, 10));
     }
 }
