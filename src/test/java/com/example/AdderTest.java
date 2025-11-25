@@ -3,7 +3,7 @@ package com.example;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class AdderTest {
+public class AdderTest {
 
     @Test
     void testAddPositiveNumbers() {
@@ -26,6 +26,6 @@ class AdderTest {
     @Test
     void testAddZero() {
         Adder adder = new Adder();
-        assertEquals(0, adder.add(0, 0));
+        assertEquals(5, adder.add(5, 0));
     }
 }
